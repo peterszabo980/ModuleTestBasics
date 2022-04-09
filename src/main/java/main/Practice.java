@@ -1,5 +1,7 @@
 package main;
 
+import javax.swing.*;
+
 /**
  * A technológia fejlődésének hála az emberiség képessé vált az űr meghódítására
  * - és meg is tette azt: számtalan bolygót fedezett fel, és gyarmatosított.
@@ -199,7 +201,17 @@ public class Practice {
      * @param heights a kadétok magassága
      */
     public static boolean isInAscendingOrder(int[] heights) {
-        return false;
+
+        boolean decision = true;
+
+        for (int i = 0; i < heights.length - 1; i++) {
+            if (heights[i] > heights[i + 1]) {
+                decision = false;
+            } else {
+                decision = true;
+            }
+        }
+        return decision;
     }
 
     /**
