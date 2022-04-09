@@ -91,7 +91,11 @@ public class Practice {
      * @return a hajó harcképes-e
      */
     public static boolean isShipAbleToFight(int shieldCharge, int weaponCharge) {
-        return false;
+        if (shieldCharge > 20 && weaponCharge > 20 && (double)(shieldCharge + weaponCharge) / 2 > 50) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -123,7 +127,14 @@ public class Practice {
      * @return a megrendelés teljesítéséhez szükséges napok száma
      */
     public static int getSpaceRabbitDays(int startRabbitValue, int requiredRabbits) {
-        return -1;
+        int days = 1;
+
+        while (startRabbitValue < requiredRabbits) {
+            startRabbitValue *= 2;
+            days++;
+        }
+
+        return days;
     }
 
     /**
