@@ -236,7 +236,13 @@ public class Practice {
      * @return az eredeti üzenet karakterei fordított sorrendben
      */
     public static char[] reverseMessage(char[] message) {
-        return null;
+        char[] messageBack = new char[message.length];
+
+        for (int i = 0; i < message.length; i++){
+            messageBack[message.length -1 - i] = message[i];
+        }
+
+        return messageBack;
     }
 
     /**
@@ -268,7 +274,26 @@ public class Practice {
      * @return a legtöbb veszteséget tartalmazó hónap index-száma
      */
     public static int getWorstMonthIndex(int[][] lossesPerMonths) {
-        return -1;
+        int[] sumLosses = new int[lossesPerMonths.length];
+        int worthMonthIndex = 0;
+
+        for (int i = 0; i < lossesPerMonths.length; i++){
+            for(int j = 0; j < lossesPerMonths[i].length; j++){
+                sumLosses[i] += lossesPerMonths[i][j];
+            }
+          /*
+            if (sumLosses[i] > sumLosses[i + 1]){
+                worthMonthIndex = i;
+            }
+           */
+        }
+
+        for (int x = 0; x < sumLosses.length - 1; x++) {
+            if (sumLosses[x] < sumLosses[x + 1]){
+                worthMonthIndex = x + 1;
+            }
+        }
+        return worthMonthIndex;
     }
 
     /**
