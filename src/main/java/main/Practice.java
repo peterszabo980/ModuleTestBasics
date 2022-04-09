@@ -320,7 +320,20 @@ public class Practice {
      * @param shipPowers az űrhajók ereje
      */
     public static void sortShipsByPower(String[] shipNames, int[] shipPowers) {
+        for (int i = shipPowers.length - 1; i > 0 ; i--) {
+            for (int j = 0; j < i; j++) {
+                if (shipPowers[j] < shipPowers[j + 1]) {
 
+                    int change = shipPowers[j];
+                    shipPowers[j] = shipPowers[j + 1];
+                    shipPowers[j + 1] = change;
+
+                    String standName = shipNames[j];
+                    shipNames[j] = shipNames[j + 1];
+                    shipNames[j + 1] = standName;
+                }
+            }
+        }
     }
 
     // --------------------------------------------------------------------------------------
