@@ -378,6 +378,13 @@ public class Practice {
      * @return fognak-e harcolni
      */
     public static boolean willTheyFight(int s1, int t1, int s2, int t2) {
+        if (s1 == s2) {
+            return true;
+        }
+
+        //int firstShip = s1 + t1;
+        //int secondShip = s2 + t2;
+
         return false;
     }
 
